@@ -22,9 +22,36 @@ const navItems = [
 ];
 
 const tutoringItems = [
-  '小初高数学辅导',
-  '高中政治辅导',
-  'C++ 入门教学',
+  {
+    title: '小初高数学辅导',
+    caseId: 'math-case',
+    summary: '结合基础漏洞、题型训练和复盘方法，帮助学生建立更清晰的解题思路。',
+    cases: [
+      '基础薄弱型：从计算、概念和错题入手，先把常见失分点补稳，再逐步增加综合题训练。',
+      '函数与几何专项：围绕高频题型拆解思路，训练审题、画图、设未知量和步骤表达。',
+      '考前冲刺型：按章节整理错题和易混点，配合限时练习，帮助学生形成稳定答题节奏。',
+    ],
+  },
+  {
+    title: '高中政治辅导',
+    caseId: 'politics-case',
+    summary: '用框架梳理知识点，结合材料题训练，帮助学生提升理解、记忆和表达能力。',
+    cases: [
+      '知识框架梳理：按模块建立关键词体系，减少死记硬背，提高复习效率。',
+      '材料题训练：带学生拆材料、找角度、对应知识点，练习更规范的答题语言。',
+      '阶段复盘：根据近期测验问题整理薄弱模块，安排背诵、默写和题目巩固。',
+    ],
+  },
+  {
+    title: 'C++ 入门教学',
+    caseId: 'cpp-case',
+    summary: '从语法、调试和基础算法开始，帮助零基础同学建立编程思维。',
+    cases: [
+      '零基础入门：从变量、条件、循环和函数讲起，通过小题目快速建立手感。',
+      '调试能力训练：带学生看报错、定位问题、整理常见错误，减少卡在环境和语法上的时间。',
+      '竞赛基础衔接：结合数组、字符串、排序和枚举等内容，为后续算法学习打基础。',
+    ],
+  },
 ];
 
 const skills = ['C++', 'Python', 'Web 开发', 'AI 工具'];
@@ -147,8 +174,8 @@ function App() {
       <Section id="tutoring" eyebrow="Tutoring" title="课程辅导服务：讲清楚，也练到位">
         <div className="grid gap-5 lg:grid-cols-3">
           {tutoringItems.map((item) => (
-            <ServiceCard key={item} icon={BookOpen} title={item}>
-              一对一沟通学习情况，结合基础漏洞、题型训练和复盘方法，帮助学生建立更清晰的解题思路。
+            <ServiceCard key={item.title} icon={BookOpen} title={item.title} href={`#${item.caseId}`} actionLabel="查看辅导案例">
+              {item.summary}
             </ServiceCard>
           ))}
         </div>
@@ -169,6 +196,35 @@ function App() {
           </div>
           <a href="#contact" className="btn-primary shrink-0">
             联系预约
+            <MessageCircle className="h-4 w-4" />
+          </a>
+        </div>
+        <div className="mt-10 grid gap-5">
+          {tutoringItems.map((item) => (
+            <article key={item.caseId} id={item.caseId} className="panel scroll-mt-28">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <p className="text-sm font-semibold uppercase text-accent-cyan">Case</p>
+                  <h3 className="mt-2 text-2xl font-semibold text-white">{item.title}案例</h3>
+                </div>
+                <a href="#tutoring" className="btn-secondary shrink-0">
+                  返回课程
+                </a>
+              </div>
+              <div className="mt-6 grid gap-3 md:grid-cols-3">
+                {item.cases.map((caseItem) => (
+                  <div key={caseItem} className="rounded-md border border-white/10 bg-white/[0.045] p-4">
+                    <p className="leading-7 text-slate-300">{caseItem}</p>
+                  </div>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+        <div className="mt-5 flex flex-col justify-between gap-4 rounded-lg border border-accent-gold/25 bg-accent-gold/10 p-5 sm:flex-row sm:items-center">
+          <p className="font-semibold text-white">详细情况请咨询时间，具体安排以沟通确认为准。</p>
+          <a href="#contact" className="btn-primary shrink-0">
+            联系咨询
             <MessageCircle className="h-4 w-4" />
           </a>
         </div>
