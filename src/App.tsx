@@ -73,7 +73,7 @@ function App() {
           <div className="animate-fadeUp">
             <div className="mb-6 inline-flex flex-wrap items-center gap-2 rounded-md border border-white/10 bg-white/[0.05] px-3 py-2 text-sm text-slate-300">
               <Sparkles className="h-4 w-4 text-accent-gold" />
-              <span>大学生开发者 / 家教 / 网站制作</span>
+              <span>大学生开发者 / 课程辅导 / 网站制作</span>
             </div>
             <h1 className="max-w-3xl text-5xl font-semibold leading-tight text-white sm:text-6xl lg:text-7xl">
               张昊森
@@ -177,7 +177,7 @@ function App() {
       <Section id="work" eyebrow="Part-time" title="兼职与合作：小项目也认真交付">
         <div className="grid gap-5 md:grid-cols-3">
           <ServiceCard icon={MonitorSmartphone} title="网站开发">
-            个人主页、简历网站、展示页等，适合学生、家教、社团、小型项目快速建立线上入口。
+            个人主页、简历网站、展示页等，适合学生、课程辅导老师、社团、小型项目快速建立线上入口。
           </ServiceCard>
           <ServiceCard icon={Code2} title="前端小项目">
             可承接页面开发、交互组件、响应式适配和简单工具类页面，沟通需求后评估周期。
@@ -193,7 +193,7 @@ function App() {
           <div className="panel">
             <h3 className="text-xl font-semibold text-white">可制作类型</h3>
             <div className="mt-5 grid gap-3">
-              {['个人主页网站', '简历展示网站', '家教宣传页'].map((item) => (
+              {['个人主页网站', '简历展示网站', '课程辅导宣传页'].map((item) => (
                 <div key={item} className="flex items-center justify-between rounded-md border border-white/10 bg-white/[0.05] px-4 py-3">
                   <span className="text-slate-200">{item}</span>
                   <ArrowRight className="h-4 w-4 text-accent-cyan" />
@@ -212,7 +212,7 @@ function App() {
         </div>
       </Section>
 
-      <Section id="contact" eyebrow="Contact" title="欢迎预约家教、咨询网站制作或讨论合作">
+      <Section id="contact" eyebrow="Contact" title="欢迎预约课程辅导、咨询网站制作或讨论合作">
         <div className="grid gap-5 md:grid-cols-2">
           <a href={`mailto:${CONTACT_EMAIL}`} className="panel group">
             <Mail className="mb-5 h-7 w-7 text-accent-cyan" />
