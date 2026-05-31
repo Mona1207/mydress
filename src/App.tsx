@@ -7,6 +7,7 @@ import {
   Mail,
   MessageCircle,
   MonitorSmartphone,
+  Presentation,
   Sparkles,
 } from 'lucide-react';
 import Section from './components/Section';
@@ -18,6 +19,7 @@ const navItems = [
   { label: '辅导', href: '#tutoring' },
   { label: '合作', href: '#work' },
   { label: '网站制作', href: '#websites' },
+  { label: 'PPT制作', href: '#ppt' },
   { label: '联系', href: '#contact' },
 ];
 
@@ -100,7 +102,7 @@ function App() {
           <div className="animate-fadeUp">
             <div className="mb-6 inline-flex flex-wrap items-center gap-2 rounded-md border border-white/10 bg-white/[0.05] px-3 py-2 text-sm text-slate-300">
               <Sparkles className="h-4 w-4 text-accent-gold" />
-              <span>大学生开发者 / 课程辅导 / 网站制作</span>
+              <span>大学生开发者 / 课程辅导 / PPT制作 / 网站制作</span>
             </div>
             <h1 className="max-w-3xl text-5xl font-semibold leading-tight text-white sm:text-6xl lg:text-7xl">
               张昊森
@@ -268,7 +270,31 @@ function App() {
         </div>
       </Section>
 
-      <Section id="contact" eyebrow="Contact" title="欢迎预约课程辅导、咨询网站制作或讨论合作">
+      <Section id="ppt" eyebrow="PPT Service" title="承接 PPT 代制作：把内容讲清楚，也做得好看">
+        <div className="grid gap-5 md:grid-cols-3">
+          <ServiceCard icon={Presentation} title="逻辑清晰">
+            可根据文字材料、课程要求或汇报主题梳理结构，帮你把内容拆成更适合展示的页面节奏。
+          </ServiceCard>
+          <ServiceCard icon={Code2} title="版式统一">
+            注重标题层级、配色、图文排版和细节对齐，避免页面杂乱，让整套 PPT 看起来更完整。
+          </ServiceCard>
+          <ServiceCard icon={BriefcaseBusiness} title="沟通省心">
+            支持课程作业、课堂展示、社团活动、个人汇报等场景，先确认用途、页数和截止时间再制作。
+          </ServiceCard>
+        </div>
+        <div className="mt-6 flex flex-col justify-between gap-5 rounded-lg border border-accent-green/25 bg-accent-green/10 p-5 sm:flex-row sm:items-center">
+          <div>
+            <h3 className="font-semibold text-white">具体情况加微信沟通</h3>
+            <p className="mt-2 text-sm leading-6 text-slate-300">价格、页数、风格、交付时间和材料要求，可根据实际需求确认。</p>
+          </div>
+          <div className="inline-flex items-center gap-3 rounded-md border border-white/10 bg-white/[0.06] px-4 py-3 text-slate-100">
+            <MessageCircle className="h-4 w-4 text-accent-green" />
+            <span className="font-semibold">{CONTACT_WECHAT}</span>
+          </div>
+        </div>
+      </Section>
+
+      <Section id="contact" eyebrow="Contact" title="欢迎预约课程辅导、咨询 PPT 代制作、网站制作或讨论合作">
         <div className="grid gap-5 md:grid-cols-2">
           <a href={`mailto:${CONTACT_EMAIL}`} className="panel group">
             <Mail className="mb-5 h-7 w-7 text-accent-cyan" />
