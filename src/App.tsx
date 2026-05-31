@@ -58,6 +58,40 @@ const tutoringItems = [
 
 const skills = ['C++', 'Python', 'Web 开发', 'AI 工具'];
 
+const audienceItems = [
+  {
+    title: '课程辅导',
+    items: ['小初高数学', '高中政治', 'C++入门'],
+  },
+  {
+    title: 'PPT代制作',
+    items: ['课程汇报', '答辩展示', '社团活动', '个人汇报'],
+  },
+  {
+    title: '网站制作',
+    items: ['个人主页', '简历页', '宣传页'],
+  },
+];
+
+const ctaNotes = ['课程辅导', 'PPT', '网站制作'];
+
+function WechatCta() {
+  return (
+    <div className="flex flex-col justify-between gap-5 rounded-lg border border-accent-green/25 bg-accent-green/10 p-5 sm:flex-row sm:items-center">
+      <div>
+        <h3 className="font-semibold text-white">加微信咨询</h3>
+        <p className="mt-2 text-sm leading-6 text-slate-300">
+          微信：{CONTACT_WECHAT} / 备注：{ctaNotes.join('、')}
+        </p>
+      </div>
+      <div className="inline-flex items-center gap-3 rounded-md border border-white/10 bg-white/[0.06] px-4 py-3 text-slate-100">
+        <MessageCircle className="h-4 w-4 text-accent-green" />
+        <span className="font-semibold">{CONTACT_WECHAT}</span>
+      </div>
+    </div>
+  );
+}
+
 function App() {
   return (
     <main className="min-h-screen overflow-hidden bg-ink-950 text-slate-100">
@@ -230,6 +264,9 @@ function App() {
             <MessageCircle className="h-4 w-4" />
           </a>
         </div>
+        <div className="mt-5">
+          <WechatCta />
+        </div>
       </Section>
 
       <Section id="work" eyebrow="Part-time" title="兼职与合作：小项目也认真交付">
@@ -268,6 +305,9 @@ function App() {
             </ul>
           </div>
         </div>
+        <div className="mt-6">
+          <WechatCta />
+        </div>
       </Section>
 
       <Section id="ppt" eyebrow="PPT Service" title="承接 PPT 代制作：把内容讲清楚，也做得好看">
@@ -282,15 +322,25 @@ function App() {
             支持课程作业、课堂展示、社团活动、个人汇报等场景，先确认用途、页数和截止时间再制作。
           </ServiceCard>
         </div>
-        <div className="mt-6 flex flex-col justify-between gap-5 rounded-lg border border-accent-green/25 bg-accent-green/10 p-5 sm:flex-row sm:items-center">
-          <div>
-            <h3 className="font-semibold text-white">具体情况加微信沟通</h3>
-            <p className="mt-2 text-sm leading-6 text-slate-300">价格、页数、风格、交付时间和材料要求，可根据实际需求确认。</p>
-          </div>
-          <div className="inline-flex items-center gap-3 rounded-md border border-white/10 bg-white/[0.06] px-4 py-3 text-slate-100">
-            <MessageCircle className="h-4 w-4 text-accent-green" />
-            <span className="font-semibold">{CONTACT_WECHAT}</span>
-          </div>
+        <div className="mt-6">
+          <WechatCta />
+        </div>
+      </Section>
+
+      <Section id="audience" eyebrow="Audience" title="适合人群：先判断是不是你的需求">
+        <div className="grid gap-5 md:grid-cols-3">
+          {audienceItems.map((group) => (
+            <div key={group.title} className="panel">
+              <h3 className="text-xl font-semibold text-white">{group.title}</h3>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {group.items.map((item) => (
+                  <span key={item} className="rounded-md border border-white/10 bg-white/[0.06] px-3 py-2 text-sm text-slate-200">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </Section>
 
