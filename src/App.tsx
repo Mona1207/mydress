@@ -76,6 +76,12 @@ const audienceItems = [
 
 const ctaNotes = ['课程辅导', 'PPT', '网站制作'];
 
+const promoHighlights = [
+  '课程辅导：小初高数学 / 高中政治 / C++入门',
+  'PPT代制作：课程汇报 / 答辩展示 / 社团活动',
+  '网站制作：个人主页 / 简历页 / 宣传页',
+];
+
 function WechatCta() {
   return (
     <div className="flex flex-col justify-between gap-5 rounded-lg border border-accent-green/25 bg-accent-green/10 p-5 sm:flex-row sm:items-center">
@@ -156,6 +162,22 @@ function App() {
               <a href="#contact" className="btn-secondary">
                 联系我
               </a>
+            </div>
+            <div className="mt-8 rounded-lg border border-accent-green/25 bg-accent-green/10 p-5">
+              <div className="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+                <div>
+                  <p className="text-sm font-semibold text-accent-green">本周可接单</p>
+                  <div className="mt-3 grid gap-2 text-sm leading-6 text-slate-300">
+                    {promoHighlights.map((item) => (
+                      <p key={item}>{item}</p>
+                    ))}
+                  </div>
+                </div>
+                <div className="shrink-0 rounded-md border border-white/10 bg-white/[0.06] px-4 py-3 text-sm text-slate-100">
+                  微信：{CONTACT_WECHAT}
+                  <span className="mt-1 block text-slate-400">备注：课程辅导 / PPT / 网站制作</span>
+                </div>
+              </div>
             </div>
           </div>
 
