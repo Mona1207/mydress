@@ -15,14 +15,14 @@ import { CONTACT_EMAIL, CONTACT_WECHAT } from './lib/profile';
 
 const navItems = [
   { label: '介绍', href: '#about' },
-  { label: '家教', href: '#tutoring' },
+  { label: '辅导', href: '#tutoring' },
   { label: '合作', href: '#work' },
   { label: '网站制作', href: '#websites' },
   { label: '联系', href: '#contact' },
 ];
 
 const tutoringItems = [
-  '初中 / 高中数学辅导',
+  '小初高数学辅导',
   '高中政治辅导',
   'C++ 入门教学',
 ];
@@ -83,7 +83,7 @@ function App() {
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a href="#tutoring" className="btn-primary">
-                家教服务
+                课程辅导服务
                 <ArrowRight className="h-4 w-4" />
               </a>
               <a href="#work" className="btn-secondary">
@@ -136,15 +136,31 @@ function App() {
             </p>
           </div>
         </div>
+        <div className="mt-5 panel">
+          <h3 className="text-xl font-semibold text-white">荣誉</h3>
+          <div className="mt-4 inline-flex items-center rounded-md border border-accent-gold/30 bg-accent-gold/10 px-3 py-2 text-sm text-slate-100">
+            蓝桥杯省奖
+          </div>
+        </div>
       </Section>
 
-      <Section id="tutoring" eyebrow="Tutoring" title="家教服务：讲清楚，也练到位">
+      <Section id="tutoring" eyebrow="Tutoring" title="课程辅导服务：讲清楚，也练到位">
         <div className="grid gap-5 lg:grid-cols-3">
           {tutoringItems.map((item) => (
             <ServiceCard key={item} icon={BookOpen} title={item}>
               一对一沟通学习情况，结合基础漏洞、题型训练和复盘方法，帮助学生建立更清晰的解题思路。
             </ServiceCard>
           ))}
+        </div>
+        <div className="mt-5 panel">
+          <h3 className="text-lg font-semibold text-white">服务区域</h3>
+          <div className="mt-4 flex flex-wrap gap-2">
+            {['临汾', '太原'].map((city) => (
+              <span key={city} className="rounded-md border border-white/10 bg-white/[0.06] px-3 py-2 text-sm text-slate-200">
+                {city}
+              </span>
+            ))}
+          </div>
         </div>
         <div className="mt-6 flex flex-col justify-between gap-5 rounded-lg border border-accent-cyan/20 bg-accent-cyan/10 p-5 sm:flex-row sm:items-center">
           <div>
