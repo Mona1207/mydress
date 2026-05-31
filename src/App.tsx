@@ -8,11 +8,12 @@ import {
   MessageCircle,
   MonitorSmartphone,
   Presentation,
+  Search,
   Sparkles,
 } from 'lucide-react';
 import Section from './components/Section';
 import ServiceCard from './components/ServiceCard';
-import { CONTACT_EMAIL, CONTACT_WECHAT } from './lib/profile';
+import { CONTACT_EMAIL, CONTACT_WECHAT, CONTACT_XIAOHONGSHU } from './lib/profile';
 
 const navItems = [
   { label: '介绍', href: '#about' },
@@ -345,7 +346,7 @@ function App() {
       </Section>
 
       <Section id="contact" eyebrow="Contact" title="欢迎预约课程辅导、咨询 PPT 代制作、网站制作或讨论合作">
-        <div className="grid gap-5 md:grid-cols-2">
+        <div className="grid gap-5 md:grid-cols-3">
           <a href={`mailto:${CONTACT_EMAIL}`} className="panel group">
             <Mail className="mb-5 h-7 w-7 text-accent-cyan" />
             <p className="text-sm text-slate-400">邮箱</p>
@@ -355,6 +356,11 @@ function App() {
             <MessageCircle className="mb-5 h-7 w-7 text-accent-green" />
             <p className="text-sm text-slate-400">微信</p>
             <p className="mt-2 text-xl font-semibold text-white">{CONTACT_WECHAT}</p>
+          </div>
+          <div className="panel">
+            <Search className="mb-5 h-7 w-7 text-accent-gold" />
+            <p className="text-sm text-slate-400">小红书</p>
+            <p className="mt-2 text-xl font-semibold text-white">{CONTACT_XIAOHONGSHU}</p>
           </div>
         </div>
       </Section>
